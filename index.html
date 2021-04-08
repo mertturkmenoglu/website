@@ -46,7 +46,7 @@
           </div>
         </nav>
         <div class="block sm:hidden">
-          <button class="block">
+          <button class="block" id="mobileNavOpenBtn">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -55,6 +55,33 @@
         </div>
       </div>
     </header>
+    <nav id="mobileNav" class="sm:hidden bg-gray-50 fixed top-0 left-0 w-full h-full hidden">
+      <div class="flex justify-between p-8">
+        <ul class="text-3xl space-y-8">
+          <li>
+            <a class="text-gray-500 hover:text-black font-bold uppercase" href="/pages/about">About</a>
+          </li>
+          <li>
+            <a class="text-gray-500 hover:text-black font-bold uppercase" href="/pages/articles">Articles</a>
+          </li>
+          <li>
+            <a class="text-gray-500 hover:text-black font-bold uppercase" href="/pages/projects">Projects</a>
+          </li>
+          <li>
+            <a class="text-gray-500 hover:text-black font-bold uppercase" href="/pages/contact">Contact Me</a>
+          </li>
+        </ul>
+        <div class="block">
+          <button class="block" id="mobileNavCloseBtn">
+            <svg class="w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
     <main class="mt-4 md:mt-8 px-4 md:pl-28 max-w-2xl text-lg leading-normal space-y-4">
       <p>Hi, I'm <span class="font-bold text-black">Mert</span>. I'm a full-stack software developer, Kotlin enthusiast, and a violin player.</p>
       <p>I'm a senior <span class="font-bold text-black">computer engineering</span> student at Yildiz Technical University, <span
@@ -87,6 +114,8 @@
       </div>
     </main>
   </div>
+
+  <script src="/public/js/nav.js"></script>
 </body>
 
 </html>

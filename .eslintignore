@@ -1,0 +1,11 @@
+
+node_modules
+.vscode
+.idea
+.git
+dist/*
+coverage/*
+**/*.d.ts
+**/out/*
+**/.next/*
+next.config.js

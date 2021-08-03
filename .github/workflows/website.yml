@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: GitHub Action for Yarn

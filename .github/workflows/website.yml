@@ -26,9 +26,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build
-    - run: npm run export
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@v2.3.0
+    - run: yarn install
+    - run: yarn build
+    - run: yarn export
     
     - name: Website deploy
       uses: JamesIves/github-pages-deploy-action@3.5.9

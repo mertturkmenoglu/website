@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { ChevronDownIcon } from '@heroicons/react/outline';
-
 interface Props {
   className?: string;
 }
@@ -19,9 +17,6 @@ const Hero = ({ className }: Props): JSX.Element => (
       src="https://github.com/mertturkmenoglu.png"
       className="w-48 h-48 rounded-full border-2 mt-16 border-purple-600"
     />
-    <a href="/#about-banner">
-      <ChevronDownIcon className="w-16 h-16 animate-bounce text-purple-600 mt-64" />
-    </a>
   </header>
 );
 

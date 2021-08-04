@@ -17,7 +17,7 @@ const Hero = ({ className }: Props): JSX.Element => (
     </h3>
     <img
       src="https://github.com/mertturkmenoglu.png"
-      className="w-48 h-48 rounded-full border-4 mt-16 border-purple-600"
+      className="w-48 h-48 rounded-full border-2 mt-16 border-purple-600"
     />
     <a href="/#about-banner">
       <ChevronDownIcon className="w-16 h-16 animate-bounce text-purple-600 mt-64" />

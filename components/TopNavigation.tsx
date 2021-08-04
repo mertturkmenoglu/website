@@ -14,7 +14,7 @@ const TopNavigation = ({ className }: Props): JSX.Element => (
       </li>
       <li>
         <Link href="/#contact">
-          <a className="rounded-full border-2 border-purple-600 text-purple-600 text-lg font-medium py-2 px-4">
+          <a className="rounded-full border-2 border-purple-600 text-purple-600 text-lg font-medium py-2 px-4 transition duration-300 ease-in-out hover:bg-purple-600 hover:text-white">
             Contact Me
           </a>
         </Link>

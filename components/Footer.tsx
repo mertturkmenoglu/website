@@ -31,9 +31,11 @@ const Footer = ({ className }: Props) => {
   ];
 
   return (
-    <footer className={classnames('flex flex-col items-center py-16', className)}>
+    <footer className={classnames('flex flex-col items-center py-16 px-8', className)}>
       <SquirrelLogo className="text-white h-12 w-12" />
-      <h1 className="text-white mt-8 text-2xl font-mono">We are the squirrels who say Vik!</h1>
+      <h1 className="text-white mt-8 text-2xl font-mono text-center">
+        We are the squirrels who say Vik!
+      </h1>
       <nav className="my-8">
         <ul className="flex space-x-4">
           {navItems.map((item) => (

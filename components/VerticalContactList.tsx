@@ -36,7 +36,7 @@ const VerticalContactList = ({ className }: Props): JSX.Element => {
       <nav>
         <ul className="flex flex-col-reverse space-y-reverse space-y-2">
           {list.map((item) => (
-            <li key={item.url}>
+            <li key={item.url} className="w-6">
               <a href={item.url}>
                 <item.icon />
               </a>

@@ -12,9 +12,7 @@ const AboutBanner = ({ className }: Props): JSX.Element => (
       className={classnames('flex flex-col items-center pt-32 pb-64', className)}
       id="about-banner"
     >
-      <h1 className="text-gray-50 text-4xl font-bold font-sans nunito-title tracking-wide">
-        Hi, I&apos;m Mert
-      </h1>
+      <h2 className="text-gray-50 text-4xl font-bold font-sans tracking-wide">Hi, I&apos;m Mert</h2>
 
       <p className="text-gray-50 w-11/12 md:w-3/4 lg:w-1/2 mt-8 text-xl font-thin text-center tracking-wider leading-8">
         I&apos;m a senior computer engineering student at Yildiz Technical University, Istanbul /

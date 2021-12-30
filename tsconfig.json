@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "lib": [
+      "dom",
+      "es6",
+      "es2017",
+      "esnext.asynciterable"
+    ],
     "jsx": "preserve",
     "skipLibCheck": true,
     "removeComments": true,
@@ -27,9 +32,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true
   },
-  "exclude": ["node_modules", ".next", "out"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "lib": ["es2015"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "lib": [
+    "es2015"
+  ]
 }

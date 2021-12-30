@@ -16,6 +16,8 @@ const Hero = ({ className }: Props): JSX.Element => (
     <Image
       src="/static/profile.jpg"
       alt="Profile picture"
+      width={192}
+      height={192}
       className="w-48 h-48 rounded-full border-2 mt-16 border-purple-600"
     />
   </header>

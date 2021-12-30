@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { ChevronDownIcon } from '@heroicons/react/outline';
-import React from 'react';
 import AboutBanner from '../components/AboutBanner';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -29,9 +29,11 @@ const Index: NextPage = () => {
           
           <Hero className="flex flex-col items-center mt-32 text-center" />
           <div className="flex justify-center items-end flex-grow">
-            <a href="/#about-banner">
-              <ChevronDownIcon className="w-16 h-16 animate-bounce text-purple-600 mb-8" />
-            </a>
+            <Link href="/#about-banner">
+              <a>
+                <ChevronDownIcon className="w-16 h-16 animate-bounce text-purple-600 mb-8" />
+              </a>
+            </Link>
           </div>
         </div>
 

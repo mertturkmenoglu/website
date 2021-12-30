@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 interface Props {
   className?: string;
@@ -34,7 +34,7 @@ const Projects = ({ className }: Props): JSX.Element => (
           </div>
         </div>
         <div className="rounded-md invisible lg:visible object-cover w-10/12">
-          <img src="/static/avalanche.png" alt="Avalanche" className="" />
+          <Image src="/static/avalanche.png" alt="Avalanche" className="" />
         </div>
       </li>
 
@@ -61,7 +61,7 @@ const Projects = ({ className }: Props): JSX.Element => (
           </div>
         </div>
         <div className="rounded-md invisible lg:visible object-cover w-10/12">
-          <img src="/static/vevericka.png" alt="Vevericka" className="" />
+          <Image src="/static/vevericka.png" alt="Vevericka" className="" />
         </div>
       </li>
     </ul>

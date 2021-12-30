@@ -1,5 +1,4 @@
-import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import GitHubIcon from './GitHubIcon';
 import LinkedInIcon from './LinkedInIcon';
 import MediumIcon from './MediumIcon';
@@ -14,7 +13,7 @@ interface Props {
 }
 
 const Contact = ({ className }: Props): JSX.Element => (
-  <section className={classnames('flex flex-col items-center mt-16', className)} id="contact">
+  <section className={clsx('flex flex-col items-center mt-16', className)} id="contact">
     <h1 className="text-4xl font-bold font-sans nunito-title tracking-wide">Contact With Me</h1>
     <div className="w-10/12 md:w-8/12 xl:w-5/12 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 mt-16">
       <div className="flex items-center px-6 py-3 bg-purple-600" />

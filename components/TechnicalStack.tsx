@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import {
   CollectionIcon, CubeIcon, DatabaseIcon, TerminalIcon,
 } from '@heroicons/react/outline';
@@ -16,7 +16,7 @@ const TechnicalStack = ({ className }: Props): JSX.Element => {
 
   return (
     <section
-      className={classnames(
+      className={clsx(
         'bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 md:w-3/4 lg:1/2 mx-auto rounded-lg py-8',
         className,
       )}

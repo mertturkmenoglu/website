@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 interface Props {
   className?: string;
@@ -7,7 +7,7 @@ interface Props {
 
 const SquirrelLogo = ({ className }: Props): JSX.Element => (
   <svg
-    className={classnames('fill-current', className)}
+    className={clsx('fill-current', className)}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width="24"

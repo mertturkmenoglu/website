@@ -1,12 +1,12 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 interface Props {
   className?: string;
 }
 
 const Projects = ({ className }: Props): JSX.Element => (
-  <section className={classnames('flex flex-col mt-16 w-11/12 md:w-3/4 lg:1/2 mx-auto', className)}>
+  <section className={clsx('flex flex-col mt-16 w-11/12 md:w-3/4 lg:1/2 mx-auto', className)}>
     <h1 className="text-4xl font-bold font-sans nunito-title tracking-wide text-center">
       Projects
     </h1>

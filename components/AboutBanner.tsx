@@ -1,5 +1,4 @@
-import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import TechnicalStack from '../components/TechnicalStack';
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 const AboutBanner = ({ className }: Props): JSX.Element => (
   <>
     <section
-      className={classnames('flex flex-col items-center pt-32 pb-64', className)}
+      className={clsx('flex flex-col items-center pt-32 pb-64', className)}
       id="about-banner"
     >
       <h2 className="text-gray-50 text-4xl font-bold font-sans tracking-wide">Hi, I&apos;m Mert</h2>

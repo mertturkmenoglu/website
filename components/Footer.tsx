@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import { MailIcon } from '@heroicons/react/outline';
 import SquirrelLogo from './SquirrelLogo';
 import GitHubIcon from './GitHubIcon';
@@ -31,7 +31,7 @@ const Footer = ({ className }: Props) => {
   ];
 
   return (
-    <footer className={classnames('flex flex-col items-center py-16 px-8', className)}>
+    <footer className={clsx('flex flex-col items-center py-16 px-8', className)}>
       <SquirrelLogo className="text-white h-12 w-12" />
       <h1 className="text-white mt-8 text-2xl font-mono text-center">
         We are the squirrels who say Vik!

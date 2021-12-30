@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 interface Props {
   className?: string;
@@ -70,7 +70,7 @@ const Work = ({ className }: Props): JSX.Element => {
   };
 
   return (
-    <section className={classnames('flex flex-col items-center mt-16', className)}>
+    <section className={clsx('flex flex-col items-center mt-16', className)}>
       <h1 className="text-4xl font-bold font-sans nunito-title tracking-wide">
         Where I&apos;ve Worked
       </h1>

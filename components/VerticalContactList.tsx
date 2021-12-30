@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import { MailIcon } from '@heroicons/react/outline';
 import GitHubIcon from './GitHubIcon';
 import LinkedInIcon from './LinkedInIcon';
@@ -31,7 +31,7 @@ const VerticalContactList = ({ className }: Props): JSX.Element => {
 
   return (
     <aside
-      className={classnames('bg-purple-300 rounded-full text-purple-600 px-1.5 py-3', className)}
+      className={clsx('bg-purple-300 rounded-full text-purple-600 px-1.5 py-3', className)}
     >
       <nav>
         <ul className="flex flex-col-reverse space-y-reverse space-y-2">

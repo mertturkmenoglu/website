@@ -14,7 +14,7 @@ interface Props {
 
 const Contact = ({ className }: Props): JSX.Element => (
   <section className={clsx('flex flex-col items-center mt-16', className)} id="contact">
-    <h1 className="text-4xl font-bold font-sans nunito-title tracking-wide">Contact With Me</h1>
+    <h1 className="text-4xl font-bold font-sans text-slate-800 tracking-wide">Contact With Me</h1>
     <div className="w-10/12 md:w-8/12 xl:w-5/12 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 mt-16">
       <div className="flex items-center px-6 py-3 bg-purple-600" />
 
@@ -25,11 +25,11 @@ const Contact = ({ className }: Props): JSX.Element => (
       ></img> */}
 
       <div className="px-6 py-4">
-        <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Mert Turkmenoglu</h1>
+        <h1 className="text-xl font-semibold text-slate-700">Mert Turkmenoglu</h1>
 
-        <p className="py-2 text-gray-700 dark:text-gray-400">Software Engineer</p>
+        <p className="py-2 text-slate-700">Software Engineer</p>
 
-        <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+        <div className="flex items-center mt-4 text-slate-700">
           <svg
             className="w-6 h-6 fill-current"
             viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ const Contact = ({ className }: Props): JSX.Element => (
           <h1 className="px-2 text-sm">Havas CX</h1>
         </div>
 
-        <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+        <div className="flex items-center mt-4 text-slate-700">
           <svg
             className="w-6 h-6 fill-current"
             viewBox="0 0 24 24"
@@ -66,10 +66,10 @@ const Contact = ({ className }: Props): JSX.Element => (
             />
           </svg>
 
-          <h1 className="px-2 text-sm">Istanbul / Turkey</h1>
+          <h1 className="px-2 text-sm text-slate-700">Istanbul / Turkey</h1>
         </div>
 
-        <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+        <div className="flex items-center mt-4 text-slate-700">
           <svg
             className="w-6 h-6 fill-current"
             viewBox="0 0 24 24"
@@ -83,37 +83,37 @@ const Contact = ({ className }: Props): JSX.Element => (
             />
           </svg>
 
-          <h1 className="px-2 text-sm">mertturkmenoglu99@gmail.com</h1>
+          <h1 className="px-2 text-sm text-slate-700">mertturkmenoglu99@gmail.com</h1>
         </div>
 
-        <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+        <div className="flex items-center mt-4 text-slate-700">
           <GitHubIcon className="w-6 h-6" />
 
           <h1 className="px-2 text-sm">
-            <a href="https://github.com/mertturkmenoglu" className="no-underline hover:underline">
+            <a href="https://github.com/mertturkmenoglu" className="no-underline hover:underline text-slate-700">
               mertturkmenoglu
             </a>
           </h1>
         </div>
 
-        <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+        <div className="flex items-center mt-4 text-slate-700">
           <LinkedInIcon className="w-6 h-6" />
 
           <h1 className="px-2 text-sm">
             <a
               href="https://linkedin.com/in/mert-turkmenoglu"
-              className="no-underline hover:underline"
+              className="no-underline hover:underline text-slate-700"
             >
               mert-turkmenoglu
             </a>
           </h1>
         </div>
 
-        <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+        <div className="flex items-center mt-4 text-slate-700">
           <MediumIcon className="w-6 h-6" />
 
           <h1 className="px-2 text-sm">
-            <a href="https://mertturkmenoglu.medium.com" className="no-underline hover:underline">
+            <a href="https://mertturkmenoglu.medium.com" className="no-underline hover:underline text-slate-700">
               mertturkmenoglu
             </a>
           </h1>

@@ -6,15 +6,15 @@ interface Props {
 
 const Projects = ({ className }: Props): JSX.Element => (
   <section className={clsx('flex flex-col mt-16 w-11/12 md:w-3/4 lg:1/2 mx-auto', className)}>
-    <h1 className="text-4xl font-bold font-sans nunito-title tracking-wide text-center">
+    <h1 className="text-4xl font-bold font-sans nunito-title tracking-wide text-center text-slate-800">
       Projects
     </h1>
     <ul className="mt-16 space-y-32 mx-auto lg:mx-0">
       <li className="flex">
-        <div className="">
+        <div className="text-slate-700">
           <div className="text-2xl">Avalanche</div>
           <hr className="w-32 mt-2 border border-purple-600" />
-          <div className="mt-0.5 text-sm tracking-widest text-gray-600">
+          <div className="mt-0.5 text-sm tracking-widest text-slate-700">
             Project Management System
           </div>
           <div className="p-4 mt-4 ml-4 w-full lg:w-10/12 shadow-lg bg-purple-100 rounded-md text-purple-700 flex items-center leading-4 tracking-wide">
@@ -23,7 +23,7 @@ const Projects = ({ className }: Props): JSX.Element => (
             meetings.
           </div>
           <div>
-            <ul className="flex text-xs space-x-3 mt-1 ml-4 text-gray-600">
+            <ul className="flex text-xs space-x-3 mt-1 ml-4 text-slate-700">
               <li>Next.js</li>
               <li>TypeScript</li>
               <li>TailwindCSS</li>
@@ -38,15 +38,15 @@ const Projects = ({ className }: Props): JSX.Element => (
 
       <li className="flex">
         <div className="">
-          <div className="text-2xl">Vevericka</div>
+          <div className="text-2xl text-slate-800">Vevericka</div>
           <hr className="w-32 mt-2 border border-purple-600" />
-          <div className="mt-0.5 text-sm tracking-widest text-gray-600">Social Media</div>
+          <div className="mt-0.5 text-sm tracking-widest text-slate-700">Social Media</div>
           <div className="p-4 mt-4 ml-4 w-full lg:w-10/12 shadow-lg bg-purple-100 rounded-md text-purple-700 flex items-center leading-4 tracking-wide">
             A social media website. You can write short &quot;Vik&quot;s and send instant messages
             to people you follow.
           </div>
           <div>
-            <ul className="flex text-xs space-x-3 mt-1 ml-4 text-gray-600">
+            <ul className="flex text-xs space-x-3 mt-1 ml-4 text-slate-700">
               <li>Vue</li>
               <li>TypeScript</li>
               <li>React Native</li>

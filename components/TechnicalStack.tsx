@@ -23,10 +23,10 @@ const TechnicalStack = ({ className }: Props): JSX.Element => {
     >
       <div className="flex flex-col items-center">
         <TerminalIcon className="w-8 h-8 text-purple-600" />
-        <h3 className="text-2xl font-medium my-2 tracking-wider">Languages</h3>
+        <h3 className="text-2xl font-medium my-2 tracking-wider text-slate-800">Languages</h3>
         <ul className="space-y-3 text-center">
           {languages.map((language) => (
-            <li key={language} className="font-medium">
+            <li key={language} className="font-medium text-slate-700">
               {language}
             </li>
           ))}
@@ -37,10 +37,10 @@ const TechnicalStack = ({ className }: Props): JSX.Element => {
 
       <div className="flex flex-col items-center mt-8 md:mt-0">
         <CollectionIcon className="w-8 h-8 text-purple-600" />
-        <h3 className="text-2xl font-medium my-2 tracking-wider">Frameworks</h3>
+        <h3 className="text-2xl font-medium my-2 tracking-wider text-slate-800">Frameworks</h3>
         <ul className="space-y-3 text-center">
           {frameworks.map((framework) => (
-            <li key={framework} className="font-medium">
+            <li key={framework} className="font-medium text-slate-700">
               {framework}
             </li>
           ))}
@@ -51,10 +51,10 @@ const TechnicalStack = ({ className }: Props): JSX.Element => {
 
       <div className="flex flex-col items-center mt-8 md:mt-0">
         <DatabaseIcon className="w-8 h-8 text-purple-600" />
-        <h3 className="text-2xl font-medium my-2 tracking-wider">Databases</h3>
+        <h3 className="text-2xl font-medium my-2 tracking-wider text-slate-800">Databases</h3>
         <ul className="space-y-3 text-center">
           {databases.map((database) => (
-            <li key={database} className="font-medium">
+            <li key={database} className="font-medium text-slate-700">
               {database}
             </li>
           ))}
@@ -65,10 +65,10 @@ const TechnicalStack = ({ className }: Props): JSX.Element => {
 
       <div className="flex flex-col items-center mt-8 md:mt-0">
         <CubeIcon className="w-8 h-8 text-purple-600" />
-        <h3 className="text-2xl font-medium my-2 tracking-wider">Other</h3>
+        <h3 className="text-2xl font-medium my-2 tracking-wider text-slate-800">Other</h3>
         <ul className="space-y-3 text-center">
           {others.map((item) => (
-            <li key={item} className="font-medium">
+            <li key={item} className="font-medium text-slate-700">
               {item}
             </li>
           ))}

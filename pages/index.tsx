@@ -28,10 +28,10 @@ const Index: NextPage = () => {
         <div className="h-screen flex flex-col">
           
           <Hero className="flex flex-col items-center mt-32 text-center" />
-          <div className="flex justify-center items-end flex-grow">
+          <div className="flex justify-center items-end flex-grow mb-8">
             <Link href="/#about-banner">
-              <a>
-                <ChevronDownIcon className="w-16 h-16 animate-bounce text-purple-600 mb-8" />
+              <a className="mb-8">
+                <ChevronDownIcon className="w-16 h-16 animate-bounce text-purple-600" />
               </a>
             </Link>
           </div>

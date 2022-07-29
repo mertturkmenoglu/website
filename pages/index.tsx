@@ -25,7 +25,7 @@ const Index: NextPage = () => {
         <meta name="twitter:creator" content="@capreaee" />
       </Head>
 
-      <div className="container w-full mx-4 sm:mx-auto my-16">
+      <div className="container w-11/12 sm:w-full mx-4 sm:mx-auto my-16">
         <header>
           <Image
             src="/static/profile.jpg"
@@ -40,22 +40,17 @@ const Index: NextPage = () => {
         </header>
 
         <main className="mt-16">
-          <p
-            className="text-midnight text-xl first-letter:text-5xl first-letter:font-bold
-  first-letter:mr-3 first-letter:float-left w-2/3"
-          >
+          <p className="text-midnight text-xl mx-2 sm:w-2/3 sm:mx-0">
             Hi, my name is <span className="font-bold">Mert</span>. I&apos;m a full-stack software
-            developer, a Kotlin enthusiast, and a violin player. I&apos;m a senior computer
-            engineering student at Yildiz Technical University, Istanbul / Turkey. I&apos;m
-            interested in full-stack web development, programming languages, and design patterns.
+            developer, a Kotlin enthusiast, and a violin player. I&apos;m interested in full-stack
+            web development, programming languages, and design patterns.
           </p>
-          <p className="text-midnight text-xl w-2/3 mt-8 ">
+          <p className="text-midnight text-xl mx-2 sm:w-2/3 sm:mx-0 mt-8">
             Since 2020, I write Medium articles at popular publications. Currently, I&apos;m working
             on Vevericka, a full-stack social media / chat application, and Avalanche, a
             productivity / task management system.
           </p>
         </main>
-        <footer>Footer</footer>
       </div>
     </>
   );

@@ -30,9 +30,7 @@ const VerticalContactList = ({ className }: Props): JSX.Element => {
   ];
 
   return (
-    <aside
-      className={clsx('bg-purple-300 rounded-full text-purple-600 px-1.5 py-3', className)}
-    >
+    <aside className={clsx('bg-primary rounded-full text-white px-1.5 py-3', className)}>
       <nav>
         <ul className="flex flex-col-reverse space-y-reverse space-y-2">
           {list.map((item) => (

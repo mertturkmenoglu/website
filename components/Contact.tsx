@@ -3,29 +3,18 @@ import GitHubIcon from './GitHubIcon';
 import LinkedInIcon from './LinkedInIcon';
 import MediumIcon from './MediumIcon';
 
-/* import { LocationMarkerIcon, MailIcon, AcademicCapIcon } from '@heroicons/react/outline';
-import GitHubIcon from './GitHubIcon';
-import LinkedInIcon from './LinkedInIcon';
-import MediumIcon from './MediumIcon'; */
-
 interface Props {
   className?: string;
 }
 
 const Contact = ({ className }: Props): JSX.Element => (
   <section className={clsx('flex flex-col items-center mt-16', className)} id="contact">
-    <h1 className="text-4xl font-bold font-sans text-slate-800 tracking-wide">Contact With Me</h1>
+    <h2 className="text-4xl font-bold font-sans text-slate-800 tracking-wide">Contact With Me</h2>
     <div className="w-10/12 md:w-8/12 xl:w-5/12 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 mt-16">
       <div className="flex items-center px-6 py-3 bg-purple-600" />
 
-      {/* <img
-        className="object-contain object-center w-full h-56"
-        src="https://github.com/mertturkmenoglu.png"
-        alt="avatar"
-      ></img> */}
-
       <div className="px-6 py-4">
-        <h1 className="text-xl font-semibold text-slate-700">Mert Turkmenoglu</h1>
+        <h3 className="text-xl font-semibold text-slate-700">Mert Turkmenoglu</h3>
 
         <p className="py-2 text-slate-700">Software Engineer</p>
 
@@ -44,7 +33,7 @@ const Contact = ({ className }: Props): JSX.Element => (
             />
           </svg>
 
-          <h1 className="px-2 text-sm">Havas CX</h1>
+          <h4 className="px-2 text-sm">Havas CX</h4>
         </div>
 
         <div className="flex items-center mt-4 text-slate-700">
@@ -90,7 +79,10 @@ const Contact = ({ className }: Props): JSX.Element => (
           <GitHubIcon className="w-6 h-6" />
 
           <h1 className="px-2 text-sm">
-            <a href="https://github.com/mertturkmenoglu" className="no-underline hover:underline text-slate-700">
+            <a
+              href="https://github.com/mertturkmenoglu"
+              className="no-underline hover:underline text-slate-700"
+            >
               mertturkmenoglu
             </a>
           </h1>
@@ -113,7 +105,10 @@ const Contact = ({ className }: Props): JSX.Element => (
           <MediumIcon className="w-6 h-6" />
 
           <h1 className="px-2 text-sm">
-            <a href="https://mertturkmenoglu.medium.com" className="no-underline hover:underline text-slate-700">
+            <a
+              href="https://mertturkmenoglu.medium.com"
+              className="no-underline hover:underline text-slate-700"
+            >
               mertturkmenoglu
             </a>
           </h1>

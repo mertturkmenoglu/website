@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mert Turkmenoglu">
+  <header>
+    <img
+      src="/profile.jpg"
+      alt="Profile picture"
+      width={128}
+      height={128}
+      class="rounded-full">
+
+      <h1 class="text-5xl text-midnight font-bold">Mert Turkmenoglu</h1>
+      <h2 class="text-3xl text-midnight opacity-80">Software Engineer</h2>
+      <hr class="border border-midnight w-11/12 sm:w-2/3 md:w-1/3 mt-2 px-4" />
+  </header>
+	<main class="mt-16">
+      <p class="text-midnight text-xl mx-2 sm:w-2/3 sm:mx-0">
+          Hi, my name is <span class="font-bold">Mert</span>. I&apos;m a full-stack software
+          developer, a Kotlin enthusiast, and a violin player. I&apos;m interested in full-stack web
+          development, programming languages, and design patterns.
+        </p>
+        <p class="text-midnight text-xl mx-2 sm:w-2/3 sm:mx-0 mt-8">
+          Since 2020, I write Medium articles at popular publications. Currently, I&apos;m working
+          on Vevericka, a full-stack social media / chat application, and Avalanche, a productivity
+          / task management system.
+        </p>
+
+        <nav class="mt-4">
+          <ul class="flex items-baseline space-x-4 flew-wrap">
+            <li>
+              <a
+                href="https://github.com/mertturkmenoglu"
+                class="font-bold underline"
+              >
+                GitHub
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/mert-turkmenoglu/"
+                class="font-bold underline"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
+	</main>
+</Layout>

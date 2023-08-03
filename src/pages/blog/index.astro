@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 const allPosts = await Astro.glob('./*.{md,mdx}')
 const publishedPosts = allPosts.filter((post) => post.frontmatter.publish)
-const posts = publishedPosts.reverse();
+const posts = publishedPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
 ---
 <Layout title="Blog | Mert Turkmenoglu">
   <a href="/" class="hover:underline text-xs">&lt;- Home</a>

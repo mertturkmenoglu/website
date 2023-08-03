@@ -6,13 +6,13 @@ author: "Mert Turkmenoglu"
 image: "/squirrel-1.jpg"
 imageAlt: "A squirrel sitting on a tree branch."
 publish: true
-date: "03 Aug 2023"
+date: "2023-08-03 13:00"
 ---
 export const imageAttr = "Photo by Ilnur Kalimullin on Unsplash"
 
-<div class="mx-auto not-prose flex flex-col items-center my-8">
-  <img src={frontmatter.image} alt={frontmatter.imageAlt} class="w-[640px] aspect-video" />
-  <p class="text-sm mt-2">{imageAttr}</p>
+<div className="mx-auto not-prose flex flex-col items-center my-8">
+  <img src={frontmatter.image} alt={frontmatter.imageAlt} className="w-[640px] aspect-video" />
+  <p className="text-sm mt-2">{imageAttr}</p>
 </div>
 
 <hr />

@@ -8,12 +8,12 @@ const posts = publishedPosts.reverse();
   <a href="/" class="hover:underline text-xs">&lt;- Home</a>
   <h2 class="text-5xl text-white mt-8">My Blog Posts</h2>
   <hr class="border border-white w-11/12 sm:w-2/3 md:w-1/3 mt-2 px-4" />
-  <ul class="mt-8 flex flex-col gap-8">
+  <ul class="mt-8 flex flex-col gap-8 max-w-3xl">
     {posts.map((post) => 
       <li>
         <a href={post.url} class="flex items-stretch gap-4 bg-midnight hover:bg-midnight/10">
           <img 
-            src={`/${post.frontmatter.image}`} 
+            src={post.frontmatter.image} 
             alt={post.frontmatter.imageAlt}
             class="w-32 aspect-square object-cover rounded"
           />

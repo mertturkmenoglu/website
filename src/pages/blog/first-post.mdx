@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: "My First Blog Post"
+description: "This is my first blog post. I am using Astro and TailwindCSS to build this blog. Previous sentence was written by GitHub Copilot."
+author: "Mert Turkmenoglu"
+image: "/squirrel-1.jpg"
+imageAlt: "A squirrel sitting on a tree branch."
+publish: true
+date: "03 Aug 2023"
+---
+export const imageAttr = "Photo by Ilnur Kalimullin on Unsplash"
+
+<div class="mx-auto not-prose flex flex-col items-center my-8">
+  <img src={frontmatter.image} alt={frontmatter.imageAlt} class="w-[640px] aspect-video" />
+  <p class="text-sm mt-2">{imageAttr}</p>
+</div>
+
+<hr />
+
+This is my first blog post. Welcome. 
+
+I built this website using Astro, TailwindCSS, and MDX. I'm still trying a lot of things, so be prepared for changes.
+
+You want to see something cool? Here's my current Tailwind config file:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#be185d',
+        'midnight': '#1a1a1a',
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+}
+```
+
+<em>IT DISPLAYS IT AS JAVASCRIPT CODE. HOW COOL IS THAT?</em>
+
+And the text above should be in italics and color should be amber. So cool. It's <em>squirrel</em>-like cool.
+I like <em>squirrels</em> btw.
+
+If you want to know more about the tech stack, you can check out [my GitHub repo](https://github.com/mertturkmenoglu/website).

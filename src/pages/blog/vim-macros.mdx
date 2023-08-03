@@ -1,0 +1,87 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: "How Vim Macros Saved Me Editing 1500 Lines of Code Line by Line"
+description: "How I learned to use Vim macros and edited 1500 lines of code in a couple of minutes."
+author: "Mert Turkmenoglu"
+image: "/vim.png"
+imageAlt: "Vim logo"
+publish: true
+date: "2023-08-03 16:00"
+---
+export const imageAttr = "Vim logo"
+
+<div className="mx-auto not-prose flex flex-col items-center my-8">
+    <img src={frontmatter.image} alt={frontmatter.imageAlt} className="w-[256px] aspect-square" />
+    <p className="text-sm mt-2">{imageAttr}</p>
+</div>
+
+<hr />
+
+I'm using <em>IntelliJ</em> (blasphemy) with <em>IdeaVim</em> (understandable) plugin. I like Vim motions, but I'm still too addicted to some IntelliJ features, so I find it hard to use bare Vim/NeoVim.
+And I have a life, so I don't like to dive into configuring Vim.
+
+Yesterday, I needed to get a lot of product data and use a REST endpoint to create a bunch of products in my eCommerce project. I had a CSV file with
+a lot of information and I only needed 3 columns from that CSV. I didn't like the idea of reading parsing and transforming CSV to JSON (which is the format I needed).
+It would be much easier but why spend 5 minutes when you can waste 5 hours on something else? Am I right?
+
+So I decided to manually prepare the JSON payload. I deleted useless columns from the CSV file, copy-pasta'd the data to an IntelliJ scratch file.
+Good. Now I have ~1500 lines of product data. Each line is something like this:
+
+```csv
+24601 Shoes My Special Brand Shoe
+```
+
+I need to transform this to:
+
+```json
+{
+  "id": "24601",
+  "type": "Shoes",
+  "name": "My Special Brand Shoe"
+}
+```
+
+I knew IntelliJ had a feature called <em>cursor duplication</em>. I would basically have more than one cursor and I could edit all of them at the same time.
+Ok, how to add multiple cursors? I don't know. I used `Shift + Shift` to search for the action. It doesn't have a keybinding. So I went to settings and added a keybinding for it.
+Now I can add multiple cursors. I pressed the super-special-characters on my keyboard for dozens of times. First gotcha: You can't have more than 1000 cursors. I had ~1500 lines. Ok not a problem, I can do it in 2 batches.
+
+To test if it actually works, I pressed `I` to go to the beginning of the line and switch to <em>insert</em> mode. IntelliJ is unresponsive. Waited for a couple of minutes. Still unresponsive.
+I killed the process, opened up the IntelliJ again. Ok, I said, maybe 1000 cursors are very hard for IntelliJ to handle. Let's try 300. Why not? Even if it feels sluggish, I can bare to wait a couple of seconds. (At the time, I thought I could bear it.)
+
+Same thing, an unresponsive IntelliJ. Killed it, opened it, I lost the scratch file somehow (magnificent). I opened the CSV file again, copy-pasted the data to a new scratch file.
+
+I'm looking at the same file, only 15 minutes wasted. Nice. What I was doing?
+
+Then Vim gods communicated with me: <em>"Btw, I use Vim. I can do this easily in Vim. You know that right?"</em> I remembered <em>ThePrimeagen</em> mentioned something called <em>macros</em>.
+
+What are they? Why are they useful? No idea. Opened the browser, `vim macros !g` enter. Opened the first link, learned that they are useful for doing something repetitive. Nice, that's what I need.
+How do I use them? Read more. After 5 minutes I think I have an idea how they work.
+
+Going back to IntelliJ, hoping IdeaVim supports it. Pressing `qa` to start recording a macro to register `a`.
+First try, I failed. No problem, I can do it again. I recorded a macro to:
+- Go the beginning of the line
+- Go into insert mode
+- Write `lorem` (I was testing)
+- Go back to normal mode
+- Go one line below.
+- Stop recording the macro.
+
+Ok, macro is recorded into `a`. Now I try `@a`. <em>IT WORKS!</em> Trying `5@a`. <em>IT WORKS AGAIN!</em>
+
+Undo everything, now I'm ready to do the actual modifications I want to. I don't know if this macro is correct or not because I'm writing it after a day, from memory (it's probably not correct). But here it's an example:
+
+```text
+qaI{ id: "<Esc>ea",<Esc>wItype: "<Esc>ea",<Esc>wIname: "<Esc>A" },<Esc>jq
+```
+
+At least, good enough to give you an idea. The gist is:
+
+- I only edited one line, using only the generic Vim motions as possible. (No hjkl) (Except the last motion)
+- My every motion is recorded into a register.
+- After recording, I can say Vim <em>do this motions & changes to this line</em> or <em>do this motions & changes to 5 lines</em>.
+
+After recording the macro, the only thing I needed to do was `1500@a`. Voilà, now every line is a JSON object.
+I manually added the `[` and `]` to the beginning and end of the file.
+
+Did I really need JSON? I don't know. Could I use CSV parsing? Absolutely. Could I find a better way to do all of this? Probably.
+But thanks to Vim macros, now I'm <em>blazingly fast</em> than ever.

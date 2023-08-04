@@ -6,7 +6,7 @@ const posts = publishedPosts.sort((a, b) => new Date(b.frontmatter.date) - new D
 ---
 <Layout title="Blog | Mert Turkmenoglu">
   <a href="/" class="hover:underline text-xs hover:text-accent transition-all duration-200 ease-in-out">&lt;- Home</a>
-  <h2 class="text-5xl text-white mt-8">My Blog Posts</h2>
+  <h2 class="text-3xl sm:text-5xl text-white mt-8">My Blog Posts</h2>
   <hr class="border border-white w-11/12 sm:w-2/3 md:w-1/3 mt-2 px-4" />
 
   <div class="mt-8 flex flex-col gap-8 max-w-3xl">
@@ -19,8 +19,8 @@ const posts = publishedPosts.sort((a, b) => new Date(b.frontmatter.date) - new D
               class="w-32 aspect-square object-cover rounded"
           />
           <div>
-            <h3 class="text-white text-2xl">{post.frontmatter.title}</h3>
-            <span class="text-gray-200 text-sm mt-2 line-clamp-2">{post.frontmatter.description}</span>
+            <h3 class="text-white text-lg sm:text-2xl line-clamp-2">{post.frontmatter.title}</h3>
+            <span class="text-gray-200 text-xs sm:text-sm mt-2 line-clamp-2">{post.frontmatter.description}</span>
             <div class="flex items-center mt-2">
               <span class="text-gray-400 text-xs">{post.frontmatter.date}</span>
             </div>

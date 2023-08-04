@@ -263,7 +263,7 @@ const fill = "group-hover:fill-midnight group-focus-within:fill-midnight";
                 </div>
             </div>
             <div class="text-sm">{project.shortDescription}</div>
-            <div class="hidden group-hover:flex group-hover:flex-wrap group-hover:gap-4 justify-center mt-8">
+            <div class="flex flex-wrap gap-4 group-hover:visible group-focus-within:visible justify-center mt-8">
                 {project.technologies.map((t) => (
                     <abbr title={t.name}>
                         <Icon icon={t.icon} name={t.name} cn="w-6 h-6 group-hover:fill-midnight" />
@@ -279,7 +279,7 @@ const fill = "group-hover:fill-midnight group-focus-within:fill-midnight";
         @apply mt-4 w-full border border-accent rounded-lg p-4
         hover:bg-accent hover:text-midnight focus-within:bg-accent
         focus-within:text-midnight transition-all duration-500
-        ease-linear aspect-square flex flex-col justify-center items-center;
+        ease-linear aspect-square md:aspect-video flex flex-col justify-center items-center;
     }
 
     .card-title {

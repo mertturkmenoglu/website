@@ -1,0 +1,293 @@
+---
+import {
+    siApollographql,
+    SimpleIcon, siP5dotjs,
+} from "simple-icons";
+import Icon from "./icon.astro";
+import {
+    siAmazonaws, siAndroid, siAstro,
+    siDocker, siFirebase,
+    siGithub, siGo,
+    siGraphql, siJavascript, siKotlin,
+    siNestjs, siNextdotjs, siNuxtdotjs, siOpenjdk,
+    siPostgresql, siPython,
+    siReact, siRedis,
+    siTailwindcss,
+    siTypescript, siVercel
+} from "simple-icons/icons";
+type Project = {
+    name: string;
+    shortDescription: string;
+    repo: string;
+    website: string;
+    technologies: Array<{
+        name: string;
+        icon: SimpleIcon;
+    }>;
+};
+
+const projects: Project[] = [
+    {
+        name: 'Vevericka',
+        shortDescription: 'A social media platform',
+        repo: 'https://github.com/mertturkmenoglu/vevericka',
+        website: 'https://vevericka.vercel.app/',
+        technologies: [
+            {
+                name: "TypeScript",
+                icon: siTypescript,
+            },
+            {
+                name: "React",
+                icon: siReact,
+            },
+            {
+                name: "TailwindCSS",
+                icon: siTailwindcss,
+            },
+            {
+                name: "NestJS",
+                icon: siNestjs,
+            },
+            {
+                name: "PostgreSQL",
+                icon: siPostgresql,
+            },
+            {
+                name: "Docker",
+                icon: siDocker,
+            },
+            {
+                name: "GraphQL",
+                icon: siGraphql,
+            },
+            {
+                name: "Redis",
+                icon: siRedis,
+            },
+        ],
+    },
+    {
+        name: "Aurora",
+        shortDescription: "An eCommerce platform",
+        repo: "https://github.com/mertturkmenoglu/aurora",
+        website: "",
+        technologies: [
+            {
+                name: "Go",
+                icon: siGo,
+            },
+            {
+                name: "AWS",
+                icon: siAmazonaws,
+            },
+            {
+                name: "TypeScript",
+                icon: siTypescript,
+            },
+            {
+                name: "Nuxt.js",
+                icon: siNuxtdotjs,
+            },
+            {
+                name: "TailwindCSS",
+                icon: siTailwindcss,
+            },
+            {
+                name: "PostgreSQL",
+                icon: siPostgresql,
+            },
+            {
+                name: "Docker",
+                icon: siDocker,
+            },
+            {
+                name: "Redis",
+                icon: siRedis,
+            },
+        ]
+    },
+    {
+        name: "Personal Website",
+        shortDescription: "My personal website",
+        repo: "https://github.com/mertturkmenoglu/website",
+        website: "https://mertturkmenoglu.com",
+        technologies: [
+            {
+                name: "Astro",
+                icon: siAstro,
+            },
+            {
+                name: "TypeScript",
+                icon: siTypescript,
+            },
+            {
+                name: "TailwindCSS",
+                icon: siTailwindcss,
+            },
+            {
+                name: "Vercel",
+                icon: siVercel,
+            },
+        ]
+    },
+    {
+        name: "DodoBot",
+        shortDescription: "A memory recording application",
+        repo: "#",
+        website: "https://dodobot.one",
+        technologies: [
+            {
+                name: "TypeScript",
+                icon: siTypescript,
+            },
+            {
+                name: "React",
+                icon: siReact,
+            },
+            {
+                name: "TailwindCSS",
+                icon: siTailwindcss,
+            },
+            {
+                name: "Next.js",
+                icon: siNextdotjs,
+            },
+            {
+                name: "GraphQL",
+                icon: siGraphql,
+            },
+            {
+                name: "Apollo",
+                icon: siApollographql,
+            },
+            {
+                name: "Vercel",
+                icon: siVercel,
+            },
+        ]
+    },
+    {
+        name: "Investigating the Effects of Design Patterns on Coupling and Cohesion",
+        shortDescription: "Undergraduate thesis",
+        repo: "#",
+        website: "#",
+        technologies: [
+            {
+                name: "Kotlin",
+                icon: siKotlin,
+            },
+        ]
+    },
+    {
+        name: "Agile Software Development Processes in Distributed Teams",
+        shortDescription: "Research Project",
+        repo: "#",
+        website: "#",
+        technologies: [
+            {
+                name: "Python",
+                icon: siPython,
+            },
+        ]
+    },
+    {
+        name: "Calendar App",
+        shortDescription: "Android calendar application",
+        repo: "https://github.com/mertturkmenoglu/calendar-app",
+        website: "#",
+        technologies: [
+            {
+                name: "Java",
+                icon: siOpenjdk,
+            },
+            {
+                name: "Android",
+                icon: siAndroid,
+            },
+            {
+                name: "Firebase",
+                icon: siFirebase,
+            },
+        ]
+    },
+    {
+        name: "Path Finding Algorithms",
+        shortDescription: "Path finding visualization",
+        repo: "https://github.com/mertturkmenoglu/path-finding-algorithms",
+        website: "https://mertturkmenoglu.github.io/path-finding-algorithms/",
+        technologies: [
+            {
+                name: "JavaScript",
+                icon: siJavascript,
+            },
+            {
+                name: "p5.js",
+                icon: siP5dotjs,
+            },
+        ],
+    },
+    {
+        name: "Sorting Algorithms",
+        shortDescription: "Sorting visualization",
+        repo: "https://github.com/mertturkmenoglu/sorting-visualization",
+        website: "https://mertturkmenoglu.github.io/path-finding-algorithms/",
+        technologies: [
+            {
+                name: "JavaScript",
+                icon: siJavascript,
+            },
+            {
+                name: "p5.js",
+                icon: siP5dotjs,
+            },
+        ],
+    },
+];
+
+const fill = "group-hover:fill-midnight group-focus-within:fill-midnight";
+---
+<h2 class="text-2xl sm:text-3xl font-bold">My Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-16 mx-auto mt-16">
+    {projects.map((project) => (
+        <div class="card group">
+            <h3 class="card-title line-clamp-2 min-h-[4rem] text-center flex items-center">{project.name}</h3>
+            <div class="max-w-sm flex items-center justify-between my-4">
+                <div class="flex items-center space-x-2">
+                    <a href={project.repo} target="_blank" class="ml-2">
+                        <Icon icon={siGithub} name="GitHub" cn="card-icon" fill={fill} />
+                    </a>
+                    <a href={project.website} target="_blank" class="ml-2">
+                        <Icon icon={siVercel} name="Website" cn="card-icon" fill={fill} />
+                    </a>
+                </div>
+            </div>
+            <div class="text-sm">{project.shortDescription}</div>
+            <div class="hidden group-hover:flex group-hover:flex-wrap group-hover:gap-4 justify-center mt-8">
+                {project.technologies.map((t) => (
+                    <abbr title={t.name}>
+                        <Icon icon={t.icon} name={t.name} cn="w-6 h-6 group-hover:fill-midnight" />
+                    </abbr>
+                ))}
+            </div>
+        </div>
+    ))}
+</div>
+
+<style>
+    .card {
+        @apply mt-4 w-full border border-accent rounded-lg p-4
+        hover:bg-accent hover:text-midnight focus-within:bg-accent
+        focus-within:text-midnight transition-all duration-500
+        ease-linear aspect-square flex flex-col justify-center items-center;
+    }
+
+    .card-title {
+       @apply text-base text-accent font-bold
+       group-hover:text-midnight group-focus-within:text-midnight;
+    }
+
+    .card-icon {
+       @apply w-6 h-6 group-hover:fill-midnight group-focus-within:fill-midnight;
+    }
+</style>

@@ -1,12 +1,18 @@
 ---
-const { icon, cn } = Astro.props;
+const { icon, cn, fill = "group-hover:fill-accent" } = Astro.props;
 ---
 
 <svg
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    class={"fill-white group-hover:fill-accent transition duration-200 ease-in-out " + cn}
+    class:list={["fill-white transition duration-200 ease-in-out", fill, cn]}
 >
     <path d={icon.path} />
 </svg>
+
+<style>
+    .card-icon {
+        @apply w-6 h-6 group-hover:fill-midnight group-focus-within:fill-midnight;
+    }
+</style>

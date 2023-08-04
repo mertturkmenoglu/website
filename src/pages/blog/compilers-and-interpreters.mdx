@@ -1,0 +1,70 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: "On Compilers, Interpreters, and Runtime Environments"
+description: "Basic explanation of compilers, compilation types, interpreters, and runtime environments."
+author: "Mert Turkmenoglu"
+image: "/kitty-1.jpg"
+imageAlt: "Photo by Kote Puerto on Unsplash"
+publish: true
+date: "2023-08-05 02:00"
+---
+export const imageAttr = "Photo by Kote Puerto on Unsplash"
+
+<div className="mx-auto not-prose flex flex-col items-center my-8">
+    <img src={frontmatter.image} alt={frontmatter.imageAlt} className="w-[640px] aspect-video object-cover" />
+    <p className="text-sm mt-2">{imageAttr}</p>
+</div>
+
+<hr />
+
+<blockquote className="[&_p]:before:content-none [&_p]:after:content-none">
+    (Please read the note before reading the article)<br />
+
+    NOTE FROM THE AUTHOR: <br />
+
+    This is a copy of a conversation I had with a friend of mine. I thought it would be useful to share it here as well.<br />
+    I'm sharing it as is, only translating my message from Turkish to English. <br />
+    I'm not an expert by any means on these topics, and you will see a lot of simplifications and generalizations. <br />
+
+    Originally written on April 12, 2022.
+</blockquote>
+
+
+We can say there are 3 main compilation types (that we usually talk about):
+
+- *Ahead of time*: It's done before the code executes. (Like how C code is turned into Assembly mnemonics)
+- *Just in time*: It's done during the code execution. (Like how Python interpreter processes *.py* scripts, or v8 handling JS code)
+- *Transpilation*: Transforming a source code (language) to another one. (Like TypeScript to JavaScript)
+
+These are all compilations but when we say compiled languages, we <i>usually</i> mean languages that are AOT compiled and produce native code as a result of compilation.
+C compiles ahead of time and the compiler produces machine code for the target platform.
+
+Example: *ANSI C* language is turned into *x86* machine code by *GCC* compiler.
+
+And here is the thing you should know: *The language and its compilation/execution are different things.* You can go and execute C as JIT, but it's usually not the case because it's against the purpose of C.
+
+JIT, is the process of turning the code into machine code of the system it's running on by a runtime environment / engine.
+When you run a Python script, even if it's a "Hello World" code, a 60K lines of Python prelude / runtime is loaded into memory. Then the Python interpreter reads the code line by line and executes it.
+
+**Java Runtime Engine (JRE)** and **Common Language Runtime (CLR)** (.NET's runtime) works similarly, but they don't do only JIT compilation.
+For example, Java, first turns the code into another intermediate language called *Java ByteCode*. Then JRE turns this bytecode into the machine code of the system it runs on.
+That's why Java is both a compiled (AOT) and an interpreted (JIT) language.
+
+For C#, it's very similar. C# is turned into Common Intermediate Language by **Roslyn** (the name of C# compiler). This intermediate code is then executed by Common Language Runtime.
+
+Transpilation is the process of turning a source code into another source code. It's usually used for turning a higher level language into a lower level one, but it doesn't have to be the case.
+The most known example is TypeScript being transpiled into JavaScript. Here, the tool we use is called compiler (tsc), but the output is JavaScript, which is a higher level source code.
+That's why we call these kind of <i>"special"</i> compilers *transpilers*.
+
+Another example could be turning two high level languages into each other. It could be Python &lt;-&gt; JS for example.
+This is also a compilation process, but the output is different.
+
+Another example could be Babel. It turns new JS versions into the old ones. It does a JS -> JS transformation. This is also a compilation process.
+
+TL;DR:
+- There are 3 different main compilation types.
+- We can group compilation types by the level of input and output codes.
+- We can group compilation types by the time of compilation (before / during execution).
+- Generally, we call languages (and their tools) that are AOT compiled and produce native machine code as a result of compilation "compiled languages", and languages (and their tools) that are JIT compiled and executed by a runtime environment "interpreted languages".
+But there are more complicated systems like in Java and C# examples.
+- The language and its compilation/execution are different things.

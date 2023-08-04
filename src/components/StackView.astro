@@ -158,16 +158,16 @@ const technologies = [
     { category: "Other", items: other },
 ]
 ---
-<h2 class="text-3xl font-bold">My Tech Stack</h2>
-<div class="flex flex-col items-stretch gap-2">
+<h2 class="text-2xl sm:text-3xl font-bold">My Tech Stack</h2>
+<div class="flex flex-col items-stretch gap-2 w-full">
     {technologies.map((category) => (
-        <div class="mt-4">
-            <h3 class="text-xl text-accent font-bold">{category.category}</h3>
-            <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 mt-2 gap-4">
+        <div class="mt-4 w-full">
+            <h3 class="text-base sm:text-xl text-accent font-bold">{category.category}</h3>
+            <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 mt-2 gap-4 w-full">
                 {category.items.map((t) => (
                     <Card>
-                        <Icon icon={t.icon} cn="w-8 h-8" />
-                        <span class="transition duration-200 ease-in-out group-hover:text-accent text-center line-clamp-1">{t.text}</span>
+                        <Icon icon={t.icon} cn="w-6 h-6 sm:w-8 sm:h-8" />
+                        <span class="transition duration-200 ease-in-out group-hover:text-accent text-center line-clamp-1 text-xs sm:text-base">{t.text}</span>
                     </Card>
                 ))}
             </div>

@@ -1,0 +1,76 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: "What I Think About Astro"
+description: "I've been using Astro for a while now. Here are my thoughts on it."
+author: "Mert Turkmenoglu"
+image: "/astro.png"
+imageAlt: "Astro logo"
+publish: true
+date: "2023-08-04 21:00"
+---
+export const imageAttr = "Astro logo"
+
+<div className="mx-auto not-prose flex flex-col items-center my-8">
+    <img src={frontmatter.image} alt={frontmatter.imageAlt} className="w-[128px]" />
+    <p className="text-sm mt-2">{imageAttr}</p>
+</div>
+
+<hr />
+
+You are reading this article in a webpage that is built with <em>Astro</em>. It's a <s class="text-accent line-through">new</s> <em>young</em> web framework, and it's kind of unique. If you look at their webpage,
+they are calling their approach as <em>zero-JS frontend architecture</em>. It's focused on content and performance, and oh boy isn't it fast.
+
+Probably one of the major features of Astro is the ability to combine multiple UI frameworks. You can develop components
+with *React*, *Vue*, *Svelte*, etc. and use them in a single Astro page. You can develop one of your components with React, other one
+with Vue, and make your page double bloated with JS. Pretty nice. Jokes aside, if you need to mostly produce static content but need
+an interactive component that you can easily develop with a UI framework, than this approach is actually great. It gives you the flexibility.
+
+Astro has a lot of integration options. TailwindCSS, Markdown, MDX, Rehype, CMS integrations, UI adapters, SSR adapters, Astro plugins, etc. Most of them also
+have pretty easy setup. If you are using Yarn, you just run `yarn astro add tailwind` and it automagically sets up everything for you.
+
+You have a file based router and create `.astro` files for your pages. You can utilize JSX and write components. You don't have reactivity, but you can have
+variables, props, and use some good old JS. You can also use TypeScript. You write these inside two `---`s which is called *frontmatter*.
+
+An example code from this website's source code (we are two parallel universes ahead right now, meta-meta programming):
+
+```astro
+---
+const links = [
+    { href: '/blog', label: 'Blog' },
+    { href: 'https://github.com/mertturkmenoglu', label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/mert-turkmenoglu/', label: 'LinkedIn' },
+    { href: 'https://twitter.com/capreaee', label: 'Twitter' },
+]
+---
+<nav class="mt-4">
+    <ul class="flex items-baseline gap-4 flex-wrap text-base sm:text-lg">
+        {links.map((l) => (
+            <li>
+                <a
+                    href={l.href}
+                    class="font-bold text-accent transition-all duration-200 ease-in-out border border-accent px-4 py-1.5 rounded-lg hover:bg-accent hover:text-midnight"
+                >
+                    {l.label}
+                </a>
+            </li>
+        ))}
+    </ul>
+</nav>
+```
+
+## Cool things I found about Astro:
+* Oh boy it's fast. Static rendering ftw.
+* *Bring your own framework* approach is pretty cool. You can statically render most of your content, and when you need an interactive component somewhere, you can just use a UI framework.
+* Easy to learn, easy to set up. Documentation is pretty good.
+* Really fast to build, deploy, and see the changes on your website.
+* [Islands Architecture](https://docs.astro.build/en/concepts/islands/)
+* A lot of integration options.
+
+## Things I didn't like:
+* I don't know if it's because of something I did stupidly, or it's a bug, using `<p>` tags broke my page. Like it completely broke it on
+mobile. I had to use `<div>`s instead.
+* Setting up MDX and TailwindCSS, and making them work together nicely was a bit of a challenge. I'm sure there are better ways to do it, but
+my hot-wiring was a bit of a mess.
+
+## Conclusion
+I liked Astro. I think I'll continue to use it for my *mostly static content* websites. I like how it's *blazingly fast*.

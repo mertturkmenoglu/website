@@ -3,6 +3,7 @@ import '../styles/base.css';
 const { frontmatter } = Astro.props;
 const image = frontmatter.image;
 const imageAlt = frontmatter.imageAlt;
+const { minutesRead } = Astro.props.frontmatter;
 ---
 
 <!DOCTYPE html>
@@ -31,12 +32,13 @@ const imageAlt = frontmatter.imageAlt;
 	</head>
 	<body class="container w-11/12 sm:w-full mx-4 sm:mx-auto my-16 bg-midnight text-white">
     <header class="not-prose">
-      <a href="/blog" class="hover:underline text-xs">&lt;- Blog</a>
-      <h2 class="text-4xl text-white mt-8">{frontmatter.title}</h2>
-      <div class="mt-2 text-sm">
-        <span>{frontmatter.author},</span>
-        <span>{frontmatter.date}</span>
-      </div>
+        <a href="/blog" class="hover:underline text-xs">&lt;- Blog</a>
+        <h2 class="text-4xl text-white mt-8">{frontmatter.title}</h2>
+        <div class="mt-2 text-sm flex items-baseline">
+            <span>{frontmatter.author},</span>
+            <span class="ml-1">{new Date(frontmatter.date).toLocaleDateString()}</span>
+            <span class="ml-4 text-xs">{minutesRead}</span>
+        </div>
     </header>
     
     <hr class="mb-16 mt-4">

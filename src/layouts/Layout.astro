@@ -7,15 +7,15 @@ export interface Props {
 const { title } = Astro.props;
 const image = "https://github.com/mertturkmenoglu.png";
 ---
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Mert Turkmenoglu personal website">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Mert Turkmenoglu personal website">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content="Mert Turkmenoglu personal website" />
     <meta property="og:url" content="https://mertturkmenoglu.com" />
@@ -30,9 +30,9 @@ const image = "https://github.com/mertturkmenoglu.png";
     <meta name="twitter:description" content="Mert Turkmenoglu personal website" />
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content="Profile Picture" />
-		<title>{title}</title>
-	</head>
-	<body class="container w-11/12 sm:w-full mx-4 sm:mx-auto my-16 bg-midnight text-white/80">
-		<slot />
-	</body>
+    <title>{title}</title>
+</head>
+<body class="container w-11/12 sm:w-full mx-4 sm:mx-auto my-16 bg-midnight text-white/80">
+    <slot />
+</body>
 </html>

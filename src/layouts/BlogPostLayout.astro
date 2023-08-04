@@ -1,19 +1,20 @@
 ---
 import '../styles/base.css';
+import Navigation from "../components/Navigation.astro";
 const { frontmatter } = Astro.props;
 const image = frontmatter.image;
 const imageAlt = frontmatter.imageAlt;
 const { minutesRead } = Astro.props.frontmatter;
 ---
-
 <!DOCTYPE html>
 <html lang="en" class="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={frontmatter.description}>
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={frontmatter.description}>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:description" content={frontmatter.description} />
     <meta property="og:url" content="https://mertturkmenoglu.com" />
@@ -28,9 +29,9 @@ const { minutesRead } = Astro.props.frontmatter;
     <meta name="twitter:description" content={frontmatter.description} />
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content={imageAlt} />
-		<title>{frontmatter.title} | Mert Turkmenoglu</title>
-	</head>
-	<body class="container w-11/12 sm:w-full mx-4 sm:mx-auto my-16 bg-midnight text-white">
+    <title>{frontmatter.title} | Mert Turkmenoglu</title>
+</head>
+<body class="container w-11/12 sm:w-full mx-4 sm:mx-auto my-16 bg-midnight text-white">
     <header class="not-prose">
         <a href="/blog" class="hover:underline text-xs">&lt;- Blog</a>
         <h2 class="text-4xl text-white mt-8">{frontmatter.title}</h2>
@@ -40,45 +41,18 @@ const { minutesRead } = Astro.props.frontmatter;
             <span class="ml-4 text-xs">{minutesRead}</span>
         </div>
     </header>
-    
+
     <hr class="mb-16 mt-4">
+
     <main class="prose prose-neutral dark:prose-invert prose-amber prose-p:text-white max-w-none prose-em:text-amber-400">
-		  <slot />
+          <slot />
     </main>
 
     <footer class="not-prose mt-16">
-      <hr />
-      <nav class="mt-16 text-amber-500">
-          <ul class="flex items-baseline space-x-4 flew-wrap">
-             <li>
-              <a
-                href="/blog"
-                class="font-bold underline"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/mertturkmenoglu"
-                class="font-bold underline"
-              >
-                GitHub
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.linkedin.com/in/mert-turkmenoglu/"
-                class="font-bold underline"
-              >
-                LinkedIn
-              </a>
-            </li>
-          </ul>
-      </nav>
+        <hr />
+        <Navigation />
     </footer>
-	</body>
+</body>
 </html>
 
 

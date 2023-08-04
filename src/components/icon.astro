@@ -1,0 +1,12 @@
+---
+const { icon, cn } = Astro.props;
+---
+
+<svg
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    class={"fill-white group-hover:fill-[#ffff00] transition duration-200 ease-in-out " + cn}
+>
+    <path d={icon.path} />
+</svg>

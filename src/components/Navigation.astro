@@ -1,0 +1,22 @@
+---
+const links = [
+    { href: '/blog', label: 'Blog' },
+    { href: 'https://github.com/mertturkmenoglu', label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/mert-turkmenoglu/', label: 'LinkedIn' },
+    { href: 'https://twitter.com/capreaee', label: 'Twitter' },
+]
+---
+<nav class="mt-4">
+    <ul class="flex items-baseline space-x-4 flew-wrap">
+        {links.map((l) => (
+            <li>
+                <a
+                    href={l.href}
+                    class="font-bold underline text-white hover:text-amber-400 transition-all duration-200 ease-in-out"
+                >
+                    {l.label}
+                </a>
+            </li>
+        ))}
+    </ul>
+</nav>

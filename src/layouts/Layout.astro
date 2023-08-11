@@ -32,6 +32,14 @@ const image = "https://github.com/mertturkmenoglu.png";
     <meta name="twitter:image:alt" content="Profile Picture" />
     <title>{title}</title>
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EP3VF2S4P8"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EP3VF2S4P8');
+</script>
 <body class="container w-11/12 sm:w-full mx-4 sm:mx-auto my-16 bg-midnight text-white/80">
     <slot />
 </body>

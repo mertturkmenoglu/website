@@ -1,0 +1,53 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: "Do Git commit messages matter?"
+description: "A rant about Git commit message rules"
+author: "Mert Turkmenoglu"
+image: "/kitty-2.jpg"
+imageAlt: "Photo by Jeanie de Klerk on Unsplash"
+publish: true
+date: "2023-12-29 9:40"
+---
+
+export const imageAttr = "Photo by Jeanie de Klerk on Unsplash";
+
+<div className="mx-auto not-prose flex flex-col items-center my-8">
+  <img
+    src={frontmatter.image}
+    alt={frontmatter.imageAlt}
+    className="w-[640px] aspect-video object-cover"
+  />
+  <p className="text-sm mt-2">{imageAttr}</p>
+</div>
+
+<hr />
+
+TL;DR: It depends.
+
+Long Answer:
+
+I was watching a [YouTube video](https://www.youtube.com/watch?v=yDNdE5xmWiU) from a channel called _“Josh tried coding”_ and in that video
+around the timestamp 0:50, the presenter dives into the topic of commit messages and how commit messages in this repository
+are not ideal and not professional.
+
+I want to ask the following questions to discuss a core feature of Git:
+
+- Does anyone “really” care about commit messages?
+- How frequently do you check commit history and read commit messages?
+- When was the last time a detailed commit message helped you?
+- If your Git strategy (branching/pull request) eventually compresses all commits in a branch to a single commit, what is the point of fancy commit messages?
+- How important do you think to have commits similar to “fix(PK-5432): fix cookie consent popup alignment bug”?
+
+Before discussing these points, I’d like to clarify one thing: We must always remember there are different types of software projects, teams, organizations, and fields when discussing a software topic. Before concluding, one should consider different aspects of software development.
+
+A giant open-source project, for example, Linux kernel development, would benefit from meaningful detailed commit messages because there are a lot of people around the world who work on this project and it’s a critical part of a greater ecosystem. Furthermore, development has been going on for decades. So keeping everything clean and documented is a must for these types of development projects.
+
+Now, on the other hand, consider an internal tool, maybe an admin panel project. Do you need a commit message like “feat(AD-BE-24601): add users table to homepage”? Do we get any benefit from this commit message? What is the difference between this commit message and “add users table to homepage”?
+
+I think [Commitizen](https://github.com/commitizen-tools/commitizen) and other commit message tools have use cases but I don’t think they have any meaningful impact on a side project.
+When you are working on a side project and you are the only contributor, do you get any benefit from fancy commit messages or branching or pull requests? Sure, depending on the situation you may want to create a branch and merge to the main branch later but in the majority of cases you are fine pushing to the origin/main.
+
+I also see an even more extreme version of commit message police. They use git hooks or CI/CD to check commit messages and reject if it doesn’t follow the convention. I just have one question: Why? I see no benefit in following these rules and it annoys me very much. I can understand having a format for PR title/content but this strict commit message titles because most of the time an automated task creates a changelog. Having a PR template helps reviewers. Almost no one looks at commit messages, and when you look having just a simple sentence is more than enough.
+
+I’m against strict commit message rules, especially if no one reads commit messages in a repository. I see no benefit in adding fix/chore/docs prefixes, then adding the scope, then a Jira task id, and then BE or FE tags.
+We don't need this information in commit messages. If I need them, I should be able to find them in the PR description, not in commit messages.

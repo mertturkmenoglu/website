@@ -1,176 +1,44 @@
 ---
 import {
-    siAstro,
-    siKotlin,
-    siNextdotjs,
-    siNodedotjs,
-    siReact,
-    siGo,
-    siTailwindcss,
-    siTypescript,
-    siVercel,
-    siNestjs,
-    // siAwslambda,
-    siAlgolia,
-    siAmazonaws,
-    siAmazondynamodb,
-    // siAmazonec2,
-    // siAmazons3,
-    siAndroid,
-    siGraphql,
-    // siApollographql,
-    siC,
-    siClickup,
-    siCloudflare,
-    siConfluence,
-    siCypress,
-    // siDeno,
-    siDocker,
-    siElasticsearch,
-    siExpo,
-    siExpress,
-    siFirebase,
-    siGit,
-    siGithub,
-    siGithubactions,
-    siHaskell,
-    siJira,
-    siJavascript,
-    siK6,
-    siMongodb,
-    siNeovim,
-    siNuxtdotjs,
-    siOpenjdk,
-    siPlanetscale,
-    siPlaywright,
-    siPostgresql,
-    siPostman,
-    siPrisma,
-    siPython,
-    siRailway,
-    // siReactquery,
-    // siReactrouter,
-    siRedis,
-    siSelenium,
-    siSpring,
-    siStorybook,
-    // siSupabase,
-    // siSwagger,
-    siTestinglibrary,
-    siVitest,
-    siVuedotjs,
-    siSass,
-} from "simple-icons/icons";
-import Icon from "../components/icon.astro";
+siAmazonwebservices,
+siGo,
+siHono,
+siKotlin,
+siNestjs,
+siNodedotjs,
+siPostgresql,
+siReact,
+siTailwindcss,
+siTypescript,
+siVuedotjs,
+} from "simple-icons";
 import Card from "../components/card.astro";
-import {siContentful} from "simple-icons";
+import Icon from "../components/icon.astro";
 
-const langs = [
+const favourites = [
     { icon: siGo, text: "Go" },
     { icon: siTypescript, text: "TypeScript" },
     { icon: siKotlin, text: "Kotlin" },
-    { icon: siJavascript, text: "JavaScript" },
-    { icon: siOpenjdk, text: "Java" },
-    { icon: siPython, text: "Python" },
-    { icon: siC, text: "C" },
-    { icon: siHaskell, text: "Haskell" },
-]
-
-const frontend = [
     { icon: siReact, text: "React" },
-    { icon: siNextdotjs, text: "Next.js" },
     { icon: siVuedotjs, text: "Vue" },
-    { icon: siNuxtdotjs, text: "Nuxt.js" },
     { icon: siTailwindcss, text: "TailwindCSS" },
-    { icon: siSass, text: "Sass" },
-    { icon: siAstro, text: "Astro" },
-    // { icon: siReactquery, text: "React Query" },
-    // { icon: siReactrouter, text: "React Router" },
-    // { icon: siApollographql, text: "Apollo" },
-    { icon: siStorybook, text: "Storybook" },
-]
-
-const backend = [
     { icon: siNestjs, text: "NestJS" },
     { icon: siNodedotjs, text: "Node.js" },
-    { icon: siExpress, text: "Express.js" },
-    { icon: siSpring, text: "Spring" },
-    { icon: siGraphql, text: "GraphQL" },
-    { icon: siDocker, text: "Docker" },
-    { icon: siContentful, text: "Contentful" },
-    { icon: siElasticsearch, text: "Elasticsearch" },
-    // { icon: siDeno, text: "Deno" },
-    // { icon: siSupabase, text: "Supabase" },
-    // { icon: siSwagger, text: "Swagger" },
-    { icon: siPrisma, text: "Prisma" },
-]
-
-const cloud = [
-    { icon: siAmazonaws, text: "AWS" },
-    // { icon: siAwslambda, text: "Lambda" },
-    // { icon: siAmazonec2, text: "EC2" },
-    // { icon: siAmazons3, text: "S3" },
-    { icon: siCloudflare, text: "Cloudflare" },
-    { icon: siVercel, text: "Vercel" },
-    { icon: siAlgolia, text: "Algolia" },
-    { icon: siFirebase, text: "Firebase" },
-    { icon: siPlanetscale, text: "Planetscale" },
-    { icon: siRailway, text: "Railway" },
-]
-
-const databases = [
+    { icon: siHono, text: "Hono"},
+    { icon: siAmazonwebservices, text: "AWS" },
     { icon: siPostgresql, text: "Postgres" },
-    { icon: siMongodb, text: "MongoDB" },
-    { icon: siRedis, text: "Redis" },
-    { icon: siAmazondynamodb, text: "DynamoDB" },
-]
-
-const testing = [
-    { icon: siVitest, text: "Vitest" },
-    { icon: siCypress, text: "Cypress" },
-    { icon: siK6, text: "k6.io" },
-    { icon: siSelenium, text: "Selenium" },
-    { icon: siPlaywright, text: "Playwright" },
-    { icon: siTestinglibrary, text: "Testing Library" },
-]
-
-const other = [
-    { icon: siGit, text: "Git" },
-    { icon: siGithub, text: "GitHub" },
-    { icon: siPostman, text: "Postman"},
-    { icon: siGithubactions, text: "GH Actions" },
-    { icon: siNeovim, text: "Neovim" },
-    { icon: siAndroid, text: "Android" },
-    { icon: siExpo, text: "Expo" },
-    ...testing,
-    { icon: siClickup, text: "ClickUp" },
-    { icon: siConfluence, text: "Confluence" },
-    { icon: siJira, text: "Jira" },
-]
-
-const technologies = [
-    { category: "Languages", items: langs },
-    { category: "Backend", items: backend },
-    { category: "Cloud", items: cloud },
-    { category: "Frontend", items: frontend },
-    { category: "Databases", items: databases },
-    // { category: "Testing", items: testing },
-    { category: "Other", items: other },
 ]
 ---
-<h2 class="text-2xl sm:text-3xl font-bold">My Tech Stack</h2>
+<h2 class="text-2xl sm:text-3xl font-bold">A couple of my favourite technologies</h2>
 <div class="flex flex-col items-stretch gap-2 w-full">
-    {technologies.map((category) => (
-        <div class="mt-4 w-full">
-            <h3 class="text-base sm:text-xl text-accent font-bold">{category.category}</h3>
-            <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 mt-2 gap-4 w-full">
-                {category.items.map((t) => (
-                    <Card>
-                        <Icon icon={t.icon} cn="w-6 h-6 sm:w-8 sm:h-8" />
-                        <span class="transition duration-200 ease-in-out group-hover:text-accent text-center line-clamp-1 text-xs sm:text-base">{t.text}</span>
-                    </Card>
-                ))}
-            </div>
+    <div class="mt-4 w-full">
+        <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 mt-2 gap-4 w-full">
+            {favourites.map((t) => (
+                <Card>
+                    <Icon icon={t.icon} cn="w-6 h-6 sm:w-8 sm:h-8" />
+                    <span class="transition duration-200 ease-in-out group-hover:text-accent text-center line-clamp-1 text-xs sm:text-base">{t.text}</span>
+                </Card>
+            ))}
         </div>
-    ))}
+    </div>
 </div>

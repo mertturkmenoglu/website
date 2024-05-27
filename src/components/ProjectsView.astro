@@ -1,20 +1,24 @@
 ---
 import {
-    siApollographql,
-    SimpleIcon, siP5dotjs,
+SimpleIcon,
+siAmazonwebservices,
+siAndroid,
+siApollographql,
+siAstro,
+siBun,
+siDocker, siFirebase,
+siGithub, siGo,
+siGraphql,
+siHono,
+siJavascript, siKotlin,
+siNestjs, siNextdotjs, siNuxtdotjs, siOpenjdk,
+siP5dotjs,
+siPostgresql, siPython,
+siReact,
+siTailwindcss,
+siTypescript, siVercel,
 } from "simple-icons";
 import Icon from "./icon.astro";
-import {
-    siAmazonaws, siAndroid, siAstro,
-    siDocker, siFirebase,
-    siGithub, siGo,
-    siGraphql, siJavascript, siKotlin,
-    siNestjs, siNextdotjs, siNuxtdotjs, siOpenjdk,
-    siPostgresql, siPython,
-    siReact, siRedis,
-    siTailwindcss,
-    siTypescript, siVercel
-} from "simple-icons/icons";
 type Project = {
     name: string;
     shortDescription: string;
@@ -27,6 +31,66 @@ type Project = {
 };
 
 const projects: Project[] = [
+    {
+        name: 'Wanderlust',
+        shortDescription: 'An application to discover points of interests.',
+        repo: 'https://github.com/mertturkmenoglu/wanderlust',
+        website: 'https://github.com/mertturkmenoglu/wanderlust',
+        technologies: [
+            {
+                name: "Hono",
+                icon: siHono,
+            },
+            {
+                name: "Next.js",
+                icon: siNextdotjs,
+            },
+            {
+                name: "TailwindCSS",
+                icon: siTailwindcss,
+            },
+            {
+                name: "Bun",
+                icon: siBun,
+            },
+            {
+                name: "PostgreSQL",
+                icon: siPostgresql,
+            },
+            {
+                name: "Docker",
+                icon: siDocker,
+            },
+        ],
+    },
+    {
+        name: 'Horizon',
+        shortDescription: 'Service discovery platform',
+        repo: 'https://github.com/mertturkmenoglu/vevericka',
+        website: 'https://vevericka.vercel.app/',
+        technologies: [
+            {
+                name: "Go",
+                icon: siGo,
+            },
+            {
+                name: "React",
+                icon: siReact,
+            },
+            {
+                name: "TailwindCSS",
+                icon: siTailwindcss,
+            },
+            {
+                name: "PostgreSQL",
+                icon: siPostgresql,
+            },
+            {
+                name: "Docker",
+                icon: siDocker,
+            },
+        ],
+    },
     {
         name: 'Vevericka',
         shortDescription: 'A social media platform',
@@ -61,10 +125,6 @@ const projects: Project[] = [
                 name: "GraphQL",
                 icon: siGraphql,
             },
-            {
-                name: "Redis",
-                icon: siRedis,
-            },
         ],
     },
     {
@@ -79,7 +139,7 @@ const projects: Project[] = [
             },
             {
                 name: "AWS",
-                icon: siAmazonaws,
+                icon: siAmazonwebservices,
             },
             {
                 name: "TypeScript",
@@ -100,10 +160,6 @@ const projects: Project[] = [
             {
                 name: "Docker",
                 icon: siDocker,
-            },
-            {
-                name: "Redis",
-                icon: siRedis,
             },
         ]
     },
@@ -247,8 +303,8 @@ const projects: Project[] = [
 
 const fill = "group-hover:fill-midnight group-focus-within:fill-midnight";
 ---
-<h2 class="text-2xl sm:text-3xl font-bold">My Projects</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-16 mx-auto mt-16">
+<h2 class="text-2xl sm:text-3xl font-bold">My projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-16 mx-auto mt-6">
     {projects.map((project) => (
         <div class="card group">
             <h3 class="card-title line-clamp-2 min-h-[4rem] text-center flex items-center">{project.name}</h3>

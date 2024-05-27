@@ -13,19 +13,19 @@
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/partytown": "^1.2.3",
-    "@astrojs/sitemap": "^2.0.1",
+    "@astrojs/sitemap": "^2.0.2",
     "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.10.1",
+    "astro": "^2.10.15",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^2.1.0",
     "rehype-slug": "^5.1.0",
     "remark-toc": "^8.0.1",
-    "simple-icons": "^9.8.0",
-    "tailwindcss": "^3.0.24"
+    "simple-icons": "^12.0.0",
+    "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.13"
   }
 }

@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: "Zed - My First Impression"
+description: "or: How I Learned to Stop Worrying and Love the Editor"
+author: "Mert Turkmenoglu"
+image: "https://zed.dev/_next/static/media/logo_wordmark_white_bigger.2c31c722.png"
+imageAlt: "Zed logo"
+publish: false
+date: "2024-12-25 19:25"
+---
+
+export const imageAttr = "Zed editor and Zed logo are trademarks of Zed Industries: https://zed.dev/brand";
+
+<div className="mx-auto not-prose flex flex-col items-center my-8">
+  <img src={frontmatter.image} alt={frontmatter.imageAlt} className="w-[256px] aspect-square object-cover" />
+  <p className="text-sm mt-2">{imageAttr}</p>
+</div>
+
+<hr />
+
+**TL;DR**: I'm loving it.
+
+**Long Answer**:
+
+From time to time, I try new technologies to see what features they offer: text editors, terminals, web browsers, you name it.
+
+Zed was not different.
+
+I was using VS Code for my daily development activities, but I wanted to try Zed after hearing all the good things about it, especially the "GPU rendering."
+
+I've been using Zed for almost a month now. I started using it just before this year's Advent of Code. After a month of daily use, I have some things I'd like to share.
+
+## Positives
+
+- Zed is fast. It's really fast, especially if you compare it with VS Code.
+- It comes with preconfigured keymaps. You can use VS Code, IntelliJ, _Vim_ (I'm using this), etc. keymaps.
+- Zed supports a lot of different languages out of the box.
+- You can customize almost everything. It's highly configurable, not as much as Neovim, but far better than most other editors.
+- Nice integrations with AI tools. Although I don't use AI tools that much, it's still good to have this feature integrated into the editor.
+
+## Negatives
+
+- Limited Git features. You only get the basic Git features like the ability to see which lines have changed on the gutter, clicking to see the hunk diff and inline Git blame.
+  Zed doesn't have (yet) a Git panel like VS Code or IntelliJ has on the side. I solved this issue by using [Lazygit](https://github.com/jesseduffield/lazygit) and adding a keyboard shortcut
+  to my settings to launch Lazygit in a terminal window.
+- There is a limited number of extensions. If you have favourite extensions in other editors, Zed has not reached that level of ecosystem maturity.
+
+These are my first impressions of Zed. I'll continue to use it unless I really need to use VS Code or WebStorm or any other editor for some unknown reason.

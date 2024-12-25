@@ -1,66 +1,70 @@
 ---
-import '../styles/base.css';
+import "../styles/base.css";
 import Navigation from "../components/Navigation.astro";
 const { frontmatter } = Astro.props;
 const image = frontmatter.image;
 const imageAlt = frontmatter.imageAlt;
 const { minutesRead } = Astro.props.frontmatter;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={frontmatter.description}>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta property="og:title" content={frontmatter.title} />
-    <meta property="og:description" content={frontmatter.description} />
-    <meta property="og:url" content="https://mertturkmenoglu.com" />
-    <meta property="og:site_name" content="Mert Turkmenoglu" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content={image} />
-    <meta property="og:image:alt" content={imageAlt} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="@capreaee" />
-    <meta name="twitter:title" content={frontmatter.title} />
-    <meta name="twitter:description" content={frontmatter.description} />
-    <meta name="twitter:image" content={image} />
-    <meta name="twitter:image:alt" content={imageAlt} />
-    <title>{frontmatter.title} | Mert Turkmenoglu</title>
-</head>
-<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-EP3VF2S4P8"></script>
-<script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={frontmatter.description} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.description} />
+        <meta property="og:url" content="https://mertturkmenoglu.com" />
+        <meta property="og:site_name" content="Mert Turkmenoglu" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={image} />
+        <meta property="og:image:alt" content={imageAlt} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@capreaee" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.description} />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:image:alt" content={imageAlt} />
+        <title>{frontmatter.title} | Mert Turkmenoglu</title>
+        <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-EP3VF2S4P8"></script></head
+    >
 
-    gtag('config', 'G-EP3VF2S4P8');
-</script>
-<body class="container w-11/12 sm:w-full max-w-5xl mx-4 sm:mx-auto my-16 bg-midnight text-white">
-    <header class="not-prose">
-        <a href="/blog" class="hover:underline text-xs hover:text-accent transition-all duration-200 ease-in-out">&lt;- Blog</a>
-        <h2 class="text-4xl text-white mt-8">{frontmatter.title}</h2>
-        <div class="mt-2 text-sm flex items-baseline">
-            <span>{frontmatter.author},</span>
-            <span class="ml-1">{new Date(frontmatter.date).toLocaleDateString()}</span>
-            <span class="ml-4 text-xs">{minutesRead}</span>
-        </div>
-    </header>
+    <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-    <hr class="mb-16 mt-4">
+        gtag("config", "G-EP3VF2S4P8");
+    </script>
+    <body class="container w-11/12 sm:w-full max-w-5xl mx-4 sm:mx-auto my-16 bg-midnight text-white">
+        <header class="not-prose">
+            <a href="/blog" class="hover:underline text-xs hover:text-accent transition-all duration-200 ease-in-out">&lt;- Blog</a>
+            <h2 class="text-4xl text-white mt-8">{frontmatter.title}</h2>
+            <div class="mt-2 text-sm flex items-baseline">
+                <span>{frontmatter.author},</span>
+                <span class="ml-1">{new Date(frontmatter.date).toLocaleDateString()}</span>
+                <span class="ml-4 text-xs">{minutesRead}</span>
+            </div>
+        </header>
 
-    <main class="prose prose-neutral dark:prose-invert prose-yellow prose-p:text-white max-w-none prose-em:text-accent prose-a:text-accent">
-          <slot />
-    </main>
+        <hr class="mb-16 mt-4" />
 
-    <footer class="not-prose mt-16">
-        <hr />
-        <Navigation />
-    </footer>
-</body>
+        <main
+            class="prose prose-neutral dark:prose-invert prose-yellow prose-p:text-white max-w-none prose-em:text-accent prose-a:text-accent"
+        >
+            <slot />
+        </main>
+
+        <footer class="not-prose mt-16">
+            <hr />
+            <Navigation />
+        </footer>
+    </body>
 </html>
-
-

@@ -5,19 +5,22 @@ const links = [
     { href: 'https://www.linkedin.com/in/mert-turkmenoglu/', label: 'LinkedIn' },
     { href: 'https://mertturkmenoglu.substack.com/', label: 'Substack' },
     { href: 'https://twitter.com/AsyncSquirrel', label: 'Twitter' },
-]
+];
 ---
+
 <nav class="mt-4">
     <ul class="flex items-baseline gap-4 flex-wrap text-base sm:text-lg">
-        {links.map((l) => (
-            <li>
-                <a
-                    href={l.href}
-                    class="font-bold text-accent transition-all duration-200 ease-in-out border border-accent px-4 py-1.5 hover:bg-accent hover:text-midnight"
-                >
-                    {l.label}
-                </a>
-            </li>
-        ))}
+        {
+            links.map((l) => (
+                <li>
+                    <a
+                        href={l.href}
+                        class="font-bold text-accent transition-all duration-200 ease-in-out border border-accent px-4 py-1.5 hover:bg-accent hover:text-midnight"
+                    >
+                        {l.label}
+                    </a>
+                </li>
+            ))
+        }
     </ul>
 </nav>

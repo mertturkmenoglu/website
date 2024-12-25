@@ -1,8 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-const allPosts = await Astro.glob("./*.{md,mdx}");
-const publishedPosts = allPosts.filter((post) => post.frontmatter.publish);
-const posts = publishedPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+
+type Post = {
+    url: string;
+    frontmatter: {
+        image: string;
+        imageAlt: string;
+        title: string;
+        description: string;
+        date: string;
+    };
+};
+
+const posts: Post[] = Object.values(import.meta.glob("./*.mdx", { eager: true }));
 ---
 
 <Layout title="Blog | Mert Turkmenoglu">

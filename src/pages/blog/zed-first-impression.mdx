@@ -3,17 +3,24 @@ layout: ../../layouts/BlogPostLayout.astro
 title: "Zed - My First Impression"
 description: "or: How I Learned to Stop Worrying and Love the Editor"
 author: "Mert Turkmenoglu"
-image: "https://zed.dev/brand/logo_wordmark_white_bigger.png"
+image: "https://simpleicons.org/icons/zedindustries.svg"
 imageAlt: "Zed logo"
 publish: false
 date: "2024-12-25 19:25"
 ---
 
-export const imageAttr = "Zed editor and Zed logo are trademarks of Zed Industries: https://zed.dev/brand";
-
 <div className="mx-auto not-prose flex flex-col items-center my-8">
-  <img src={frontmatter.image} alt={frontmatter.imageAlt} className="w-[256px] aspect-square object-cover" />
-  <p className="text-sm mt-2">{imageAttr}</p>
+  <img
+    src={frontmatter.image}
+    alt={frontmatter.imageAlt}
+    className="w-[256px] aspect-square object-cover"
+  />
+  <p className="text-sm mt-2">
+    Zed editor and Zed logo are trademarks of{" "}
+    <a href="https://zed.dev/brand" className="text-accent underline">
+      Zed Industries
+    </a>
+  </p>
 </div>
 
 <hr />

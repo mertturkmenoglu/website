@@ -1,46 +1,48 @@
 ---
-import LeftArrow from "../../components/left-arrow.astro";
-import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+import LeftArrow from '../../components/left-arrow.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-type Post = {
-    url: string;
-    frontmatter: {
-        image: string;
-        imageAlt: string;
-        title: string;
-        description: string;
-        date: string;
-    };
-};
-
-const posts: Post[] = Object.values(import.meta.glob("./*.mdx", { eager: true }));
-posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).filter((post) => post.data.publish);
 ---
 
-<Layout title="Blog | Mert Turkmenoglu">
-    <a href="/" class="hover:underline text-xs hover:text-accent transition-all duration-200 ease-in-out flex items-center gap-2">
-        <LeftArrow />
-        <span>Home</span>
+<BaseLayout title="Blog">
+  <main>
+    <a
+      href="/"
+      class="hover:underline text-xs hover:text-accent transition-all duration-200 ease-in-out flex items-center gap-2"
+    >
+      <LeftArrow />
+      <span>Home</span>
     </a>
     <h2 class="text-3xl sm:text-5xl text-white mt-8">My Blog Posts</h2>
     <hr class="border border-white w-11/12 sm:w-2/3 md:w-1/3 mt-2 px-4" />
 
     <div class="mt-8 flex flex-col gap-8 max-w-3xl">
-        {
-            posts.map((post) => (
-                <article class="hover:outline hover:outline-accent p-2 transition-all duration-200 ease-in-out">
-                    <a href={post.url} class="flex items-stretch gap-4">
-                        <img src={post.frontmatter.image} alt={post.frontmatter.imageAlt} class="w-32 aspect-square object-cover" />
-                        <div>
-                            <h3 class="text-white text-lg sm:text-2xl line-clamp-2">{post.frontmatter.title}</h3>
-                            <span class="text-gray-200 text-xs sm:text-sm mt-2 line-clamp-2">{post.frontmatter.description}</span>
-                            <div class="flex items-center mt-2">
-                                <span class="text-gray-400 text-xs">{post.frontmatter.date}</span>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            ))
-        }
+      {
+        posts.map((post) => (
+          <article class="hover:outline hover:outline-accent p-2 transition-all duration-200 ease-in-out">
+            <a href={`/blog/${post.id}`} class="flex items-stretch gap-4">
+              {post.data.image && (
+                <img
+                  width={720}
+                  height={360}
+                  src={post.data.image}
+                  alt={post.data.imageAlt ?? ''}
+                  class="w-32 aspect-square object-cover"
+                />
+              )}
+              <div>
+                <h3 class="text-white text-lg sm:text-2xl line-clamp-2">{post.data.title}</h3>
+                <span class="text-gray-200 text-xs sm:text-sm mt-2 line-clamp-2">{post.data.description}</span>
+                <div class="flex items-center mt-2">
+                  <span class="text-gray-400 text-xs">{post.data.date.toLocaleDateString()}</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        ))
+      }
     </div>
-</Layout>
+  </main>
+</BaseLayout>

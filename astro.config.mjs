@@ -1,53 +1,25 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import mdx from "@astrojs/mdx";
-import { remarkReadingTime } from "./remark-reading-time.mjs";
-import rehypeExternalLinks from "rehype-external-links";
-import remarkToc from "remark-toc";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import sitemap from "@astrojs/sitemap";
+// @ts-check
 
-import partytown from "@astrojs/partytown";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mertturkmenoglu.com",
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    mdx(),
-    sitemap(),
-    partytown(),
-  ],
-  markdown: {
-    remarkPlugins: [
-      remarkReadingTime,
-      [
-        remarkToc,
-        {
-          heading: "contents",
-        },
-      ],
-    ],
-    rehypePlugins: [
-      rehypeSlug,
-      [
-        rehypeExternalLinks,
-        {
-          content: {
-            type: "text",
-            value: " ↩",
-          },
-        },
-      ],
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "append",
-        },
-      ],
-    ],
-  },
+	site: "https://mertturkmenoglu.com",
+	integrations: [mdx(), sitemap()],
+
+	fonts: [
+		{
+			provider: fontProviders.google(),
+			name: "IBM Plex Sans",
+			cssVariable: "--font-ibm-plex-sans",
+			fallbacks: ["sans-serif"],
+		},
+	],
+
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });

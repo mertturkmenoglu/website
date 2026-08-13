@@ -1,0 +1,29 @@
+---
+title: "Blog Update - 2026"
+description: "What changed in the codebase"
+author: "Mert Turkmenoglu"
+image: "https://images.pexels.com/photos/31698728/pexels-photo-31698728.jpeg"
+imageAlt: "Photo by Jay Brand"
+publish: true
+date: "2026-08-13 20:00"
+---
+export const imageAttr = "Photo by Jay Brand"
+export const imageAttrLink = "https://www.pexels.com/photo/close-up-of-eastern-gray-squirrel-eating-nuts-in-grass-31698728/"
+
+<div className="mx-auto not-prose flex flex-col items-center my-8">
+    <img src={frontmatter.image} alt={frontmatter.imageAlt} className="w-lg aspect-square rounded-md" />
+		<a href={imageAttrLink} target="_blank" rel="noopener noreferrer" className="text-sm mt-2 text-accent hover:underline">{imageAttr}</a>
+</div>
+
+<hr />
+
+I haven't updated this blog in a while. I decided it was time to update the codebase (long-overdue) and maybe write a few blog posts.
+
+Every time I come back to Astro, I find it harder to use. Everything changes between releases, and I can't keep up. Maybe that's because I was two major versions behind. 
+Still, I think it changes too much, too fast, between major versions.
+
+I switched to TailwindCSS v4 and I'm glad I did it — v4 is better.
+
+I unpublished some old blog posts that no longer fit my current vision for this blog.
+
+See ya!

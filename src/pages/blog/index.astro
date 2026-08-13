@@ -29,7 +29,7 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf()
                   height={360}
                   src={post.data.image}
                   alt={post.data.imageAlt ?? ''}
-                  class="w-32 aspect-square object-cover"
+                  class="w-32 aspect-square object-cover rounded-md"
                 />
               )}
               <div>
